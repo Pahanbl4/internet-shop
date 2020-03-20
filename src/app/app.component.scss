@@ -1,0 +1,12 @@
+:host,
+.home-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    ::ng-deep.mat-button-focus-overlay {
+        background-color: transparent;
+    }
+}
+

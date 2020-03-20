@@ -1,0 +1,64 @@
+@import "../../../theme";
+
+$primary: map-get($theme, primary);
+$foreground: map-get($theme, foreground);
+
+:host {
+    background-color: #fafafa;
+    display: block;
+    z-index: 2;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2),
+        0 2px 2px 0 rgba(0, 0, 0, .14),
+        0 1px 5px 0 rgba(0, 0, 0, .12);
+
+    mat-toolbar {
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    display: flex;
+    padding-right: 20px;
+
+    p {
+        margin: 0;
+    }
+
+    .title {
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 22px;
+    }
+    
+    .description {
+        text-transform: capitalize;
+        line-height: 20px;
+        font-size: 12px;
+    }
+
+    mat-icon {
+        padding-right: 15px;
+        font-size: 40px;
+        height: 40px;
+        width: 40px;
+    }
+}
+
+search-bar {
+    flex: 0.7;
+    margin-right: 12px;
+    height: 44px;
+    border-radius: 6px;
+    background-color: mat-color($primary, 400, .5);
+}
+
+.mat-button {
+    margin-right: 20px;
+    color: mat-color($foreground, secondary-text);
+    border: 1px solid mat-color($foreground, divider);
+    background-color: #fafafa;
+
+    &:hover {
+        background-color: mat-color($primary, main, .05);
+    }
+}

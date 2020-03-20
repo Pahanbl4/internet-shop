@@ -1,0 +1,58 @@
+@import "../../../../../theme";
+
+$accent: map-get($theme, accent);
+$foreground: map-get($theme, foreground);
+$primary: map-get($theme, primary);
+
+section {
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.margin-btn {
+    margin-right: 24px;
+}
+
+.full-width {
+    display: flex;
+    flex-direction: inherit;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.features {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    padding-bottom: 20px;
+
+    .left-text,
+    .pricing-text {
+        margin-top: 40px;
+        font-weight: 200;
+
+        h1,
+        h2,
+        p {
+            color: mat-color($primary, 50);
+        }
+    }
+
+    .left-text {
+        font-weight: 200;
+        border-right: 1px solid mat-color($primary, 50);
+
+        .mat-icon {
+            margin-right: 10px;
+        }
+    }
+
+    .pricing-text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding: 24px 0;
+    }
+}

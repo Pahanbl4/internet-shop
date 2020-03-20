@@ -1,0 +1,10 @@
+<section>
+    <technology-section *ngFor="let model of models"
+        [model]="model">
+    </technology-section>
+</section>
+<section>
+    <div class="full-width">
+        <product-card *ngFor="let model of models"></product-card>
+    </div>
+</section>

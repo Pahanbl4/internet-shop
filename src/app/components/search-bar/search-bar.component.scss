@@ -1,0 +1,57 @@
+:host {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.mat-form-field ::ng-deep {
+    flex: 1;
+    top: 1px;
+    width: 0;
+
+    .mat-form-field-underline {
+        display: none;
+    }
+
+    .mat-form-field-wrapper {
+        flex: 1;
+        padding: 0;
+        letter-spacing: 1.43px;
+    }
+
+    .mat-form-field-infix {
+        border: none;
+    }
+
+    &.mat-focused .mat-form-field-label {
+        color: inherit;
+    }
+
+    .mat-input-element {
+        caret-color: inherit;
+    }
+
+    .mat-form-field-subscript-wrapper {
+        cursor: default;
+        position: absolute;
+        top: 17px;
+        margin-top: 6px;
+        line-height: 11px;
+    }
+}
+
+.mat-search-icon {
+    margin: 0 16px;
+    cursor: default;
+}
+
+.mat-cancel-icon {
+    visibility: hidden;
+    cursor: pointer;
+    margin: 0 8px;
+}
+
+.active {
+    visibility: visible;
+}

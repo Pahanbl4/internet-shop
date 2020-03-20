@@ -1,0 +1,12 @@
+<mat-icon class="mat-search-icon">search</mat-icon>
+<mat-form-field [floatLabel]="'never'">
+    <input #input matInput [formControl]="searchControl" placeholder="{{placeholder}}" type="text" />
+    <mat-hint *ngIf="showSearchHint">{{ 'Type minimum 3 characters' }}</mat-hint>
+</mat-form-field>
+<mat-icon
+    matRipple
+    class="mat-cancel-icon"
+    [class.active]="searchControl.value"
+    (click)="onCancel()">
+    cancel
+</mat-icon>

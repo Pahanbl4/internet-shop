@@ -1,0 +1,29 @@
+<mat-toolbar>
+    <div class="logo">
+        <mat-icon>shopping_cart</mat-icon>
+        <div class="label">
+            <p class="title"> {{ name }} </p>
+            <p class="description"> {{ description }} </p>
+        </div>
+    </div>
+    <search-bar
+        [searchDebounceTime]="searchDebounceTime"
+        [showSearchHint]="showSearchHint"
+        [title]="title"
+        [searchTerm]="searchTerm"
+        (searchChange)="searchChanged.emit($event)">
+    </search-bar>
+
+    <div class="actions">
+        <button mat-button>
+            <mat-icon>email</mat-icon>
+        </button>
+        <button mat-button>
+            <mat-icon>call</mat-icon>
+        </button>
+        <button mat-button>
+            <mat-icon>shopping_cart</mat-icon>
+            {{'32,23 руб'}}
+        </button>
+    </div>
+</mat-toolbar>

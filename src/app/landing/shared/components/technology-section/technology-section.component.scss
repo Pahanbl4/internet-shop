@@ -1,0 +1,21 @@
+:host {
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    button {
+        background-color: transparent;
+
+        img {
+            height: 70px;
+            width: 70px;
+        }
+
+
+    }
+    .description {
+        max-width: 140px;
+    }
+}

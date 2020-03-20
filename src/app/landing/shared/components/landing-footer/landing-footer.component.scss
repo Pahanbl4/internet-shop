@@ -1,0 +1,77 @@
+@import "../../../../../theme";
+
+$foreground: map-get($theme, foreground);
+$primary: map-get($theme, primary);
+
+:host {
+    display: flex;
+    padding: 25px;
+    background-color: mat-color($primary, main, .05);
+}
+
+a {
+    color: mat-color($foreground, text);
+}
+
+.list {
+    display: flex;
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        padding: 15px;
+
+        a {
+            line-height: 2.267em;
+        }
+    }
+}
+
+.left-footer,
+.right-footer,
+.middle-footer {
+    flex: 1;
+
+    p {
+        font-size: 18px;
+        padding-left: 15px;
+    }
+}
+
+.left-footer {
+    font-weight: 200;
+    align-items: center;
+    display: flex;
+
+    .logo {
+        display: flex;
+        padding-left: 20px;
+    
+        p {
+            margin: 0;
+        }
+    
+        .title {
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 22px;
+        }
+        
+        .description {
+            text-transform: capitalize;
+            line-height: 20px;
+            font-size: 12px;
+        }
+    
+        mat-icon {
+            padding-right: 15px;
+            font-size: 40px;
+            height: 40px;
+            width: 40px;
+        }
+    }
+}
+
+.right-footer {
+
+}

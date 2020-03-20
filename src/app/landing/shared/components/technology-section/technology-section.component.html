@@ -1,0 +1,8 @@
+<button mat-button [matMenuTriggerFor]="menu">
+    <img *ngIf="model.icon" src="assets/svg/{{model.icon}}.svg">
+    <h2 class="description ellipsis"> {{model.name}} </h2>
+</button>
+
+<mat-menu #menu="matMenu" classList="page-header-menu">
+    <a mat-menu-item *ngFor="let subsection of model.subsections" routerLink="subsection.name" target="_blank">{{subsection.name}}</a>
+</mat-menu> 
