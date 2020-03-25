@@ -3,8 +3,25 @@
         [model]="model">
     </technology-section>
 </section>
-<section>
+<section class="container">
+    <div class="page-header">
+        <mat-radio-group aria-label="Select an option" [(ngModel)]="checkOffer">
+            <mat-radio-button class="example-radio-button" *ngFor="let offer of offers" [value]="offer">
+                {{offer}}
+            </mat-radio-button>
+        </mat-radio-group>
+    </div>
     <div class="full-width">
         <product-card *ngFor="let model of models"></product-card>
+    </div>
+    <div class="footer">
+        <button
+            mat-raised-button
+            type="button"
+            color="primary"
+            tabindex="-1"
+            (click)="onLoad()">
+            Загрузить еще
+    </button>
     </div>
 </section>

@@ -11,6 +11,13 @@ export class LandingFeaturesComponent implements OnInit {
 
     models: Section[];
 
+    checkOffer = 'Спецпредложения';
+
+    offers = [
+        'Новинки',
+        'Спецпредложения'
+    ];
+
     constructor() { }
 
     onDemo(): void {
@@ -93,14 +100,6 @@ export class LandingFeaturesComponent implements OnInit {
             new Section({
                 icon: 'konveyer',
                 name: 'Линии Раздачи',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'kettle',
-                name: 'Бытовая техника для дома',
                 subsections: [
                     new Section({name: 'Чайник'}),
                     new Section({name: 'Кофеварка'})

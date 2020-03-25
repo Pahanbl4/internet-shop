@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
-import { MatIconModule, MatMenuModule, MatButtonModule, MatSidenavModule } from '@angular/material';
+import { MatIconModule, MatMenuModule, MatButtonModule, MatSidenavModule, MatRadioModule } from '@angular/material';
 import { NgModule } from '@angular/core';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { RouterModule } from '@angular/router';
 
 import { LandingComponent } from './landing.component';
@@ -10,9 +11,8 @@ import { LandingFeaturesComponent } from './shared/components/landing-features/l
 import { LandingFooterComponent } from './shared/components/landing-footer/landing-footer.component';
 import { LandingHeroComponent } from './shared/components/landing-hero/landing-hero.component';
 import { LandingRoutingModule } from './landing-routing.module';
-import { TechnologySectionComponent } from './shared/components/technology-section/technology-section.component';
-import { OverlayModule } from '@angular/cdk/overlay';
 import { ProductCardModule } from '../product-card/product-card.module';
+import { TechnologySectionComponent } from './shared/components/technology-section/technology-section.component';
 
 @NgModule({
     declarations: [
@@ -34,7 +34,8 @@ import { ProductCardModule } from '../product-card/product-card.module';
         OverlayModule,
         LandingRoutingModule,
         ReactiveFormsModule,
-        ProductCardModule
+        ProductCardModule,
+        MatRadioModule
     ],
     providers: []
 })

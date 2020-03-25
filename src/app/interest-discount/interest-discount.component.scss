@@ -1,0 +1,22 @@
+@import "../../theme";
+
+$primary: map-get($theme, primary);
+$warn: map-get($theme, warn);
+
+.counter-wrapper {
+    border-radius: 24px;
+    height: 16px;
+    min-width: 16px;
+    max-width: 60px;
+    background-color: mat-color($warn, main);
+    color: mat-color($primary, 50);
+}
+
+.counter {
+    text-align: center;
+    font-weight: bold;
+    padding: 3px 4px;
+    font-size: 13px;
+    line-height: 10px;
+}
+

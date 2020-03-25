@@ -16,9 +16,36 @@ section {
 
 .full-width {
     display: flex;
-    flex-direction: inherit;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.container {
+    flex-direction: column;
+
+    .page-header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
+
+        .mat-radio-button {
+            padding: 0 40px;
+            font-size: 22px;
+        }
+    }
+
+    .footer {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        justify-content: center;
+
+        .mat-raised-button {
+            width: 210px;
+            height: 45px;
+        }
+    }
 }
 
 .features {

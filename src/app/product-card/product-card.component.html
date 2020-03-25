@@ -1,19 +1,28 @@
 <mat-card class="example-card">
-    <!-- <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header> -->
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+  <div class="header">
+    <div class="instock-wrapper">
+      <div class="instock">{{ instock ? 'В наличии' : 'Нет в наличии' }}</div>
+    </div>
+    <interest-discount [count]="90"></interest-discount>
+  </div>
+  <img mat-card-image src="https://asgr.pro/1cimport/141404-100-001.jpeg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <h3>Льдогенератор ICE TECH SK25A</h3>
+    <p>
+      Исполнение: настольное, Количество полок: 2, Температурный режим, C: +6...+12
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="price">
+      <p class="new-price">100руб.</p>
+      <p class="old-price">2100руб.</p>
+    </div>
+    <button
+      mat-button
+      class="add-basket-button"
+      type="button"
+      (click)="onAddItem()">
+      <mat-icon>add_circle_outline</mat-icon>
+    </button>
+  </mat-card-actions>
+</mat-card>

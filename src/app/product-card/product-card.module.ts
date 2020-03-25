@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
-
 import { CommonModule } from '@angular/common';
+import { MatCardModule, MatIconModule, MatButtonModule } from '@angular/material';
+
 import { ProductCardComponent } from './product-card.component';
-import { MatCardModule } from '@angular/material';
+import { InterestDiscountModule } from '../interest-discount/interest-discount.module';
 
 @NgModule({
     declarations: [
@@ -10,7 +11,10 @@ import { MatCardModule } from '@angular/material';
     ],
     imports: [
         CommonModule,
-        MatCardModule
+        MatCardModule,
+        MatIconModule,
+        MatButtonModule,
+        InterestDiscountModule
     ],
     providers: [],
     exports: [ProductCardComponent]

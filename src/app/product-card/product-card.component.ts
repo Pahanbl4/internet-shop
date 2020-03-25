@@ -8,4 +8,9 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class ProductCardComponent {
 
+    instock = true;
+
+    onAddItem(): void {
+        console.log('added item to Basket')
+    }
 }
