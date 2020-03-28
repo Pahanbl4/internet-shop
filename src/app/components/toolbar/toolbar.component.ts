@@ -19,6 +19,13 @@ export class ToolbarComponent implements OnInit {
 
     @Output() searchChanged = new EventEmitter<string>();
 
+    mobilePhones = [
+        '+375331234567',
+        '+375339876543'
+    ];
+
+    email = 'e-commerce@support.com'
+
     name: string;
 
     description: string;

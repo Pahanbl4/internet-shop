@@ -3,7 +3,9 @@
         [model]="model">
     </technology-section>
 </section>
-<section class="container">
+
+<section class="container" id="stocks">
+    <mat-divider></mat-divider>
     <div class="page-header">
         <mat-radio-group aria-label="Select an option" [(ngModel)]="checkOffer">
             <mat-radio-button class="example-radio-button" *ngFor="let offer of offers" [value]="offer">
@@ -22,6 +24,6 @@
             tabindex="-1"
             (click)="onLoad()">
             Загрузить еще
-    </button>
+        </button>
     </div>
 </section>

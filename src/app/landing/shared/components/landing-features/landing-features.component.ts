@@ -20,7 +20,8 @@ export class LandingFeaturesComponent implements OnInit {
 
     constructor() { }
 
-    onDemo(): void {
+    onLoad(): void {
+        console.log('on load...')
     }
 
     ngOnInit(): void {
@@ -35,76 +36,22 @@ export class LandingFeaturesComponent implements OnInit {
             }),
             new Section({
                 icon: 'konveyer',
-                name: 'Линии Раздачи',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'kettle',
-                name: 'Бытовая техника для дома',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'konveyer',
-                name: 'Линии Раздачи',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'kettle',
-                name: 'Бытовая техника для дома',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'konveyer',
-                name: 'Линии Раздачи',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'kettle',
-                name: 'Бытовая техника для дома',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'konveyer',
-                name: 'Линии Раздачи',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'kettle',
-                name: 'Бытовая техника для дома',
-                subsections: [
-                    new Section({name: 'Чайник'}),
-                    new Section({name: 'Кофеварка'})
-                ]
-            }),
-            new Section({
-                icon: 'konveyer',
-                name: 'Линии Раздачи',
+                name: 'Линии Раздач',
                 subsections: [
                     new Section({name: 'Чайник'}),
                     new Section({name: 'Кофеварка'})
                 ]
             })
         ];
+        this.models = [
+            ...this.models,
+            ...this.models,
+            ...this.models,
+            ...this.models,
+            ...this.models,
+            ...this.models,
+            ...this.models,
+            ...this.models
+        ]
     }
 }

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
     selector: 'view-landing',
@@ -6,4 +7,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     styleUrls: ['landing.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class LandingComponent { }
+export class LandingComponent {
+    email: FormControl;
+
+    onSend(): void {
+        console.log('send email');
+    }
+}

@@ -1,5 +1,5 @@
 <mat-toolbar>
-    <div class="logo">
+    <div class="logo" onclick="window.location.href='#'">
         <mat-icon>shopping_cart</mat-icon>
         <div class="label">
             <p class="title"> {{ name }} </p>
@@ -15,10 +15,13 @@
     </search-bar>
 
     <div class="actions">
-        <button mat-button>
-            <mat-icon>email</mat-icon>
+        <button class="email" mat-button>
+            <a mat-menu-item [href]="'mailto:' + email">
+                <mat-icon mat-list-icon>email</mat-icon>
+                <span>{{ email }}</span>
+            </a>
         </button>
-        <button mat-button>
+        <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon>call</mat-icon>
         </button>
         <button mat-button>
@@ -27,3 +30,10 @@
         </button>
     </div>
 </mat-toolbar>
+
+<mat-menu #menu="matMenu" classList="page-header-menu">
+    <a mat-menu-item *ngFor="let mobile of mobilePhones" [href]="'tel:' + mobile">
+        <mat-icon mat-list-icon>phone</mat-icon>
+        <span>{{ mobile }}</span>
+    </a>
+</mat-menu>

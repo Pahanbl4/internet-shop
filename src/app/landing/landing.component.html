@@ -1,3 +1,16 @@
+<navbar></navbar>
 <landing-hero></landing-hero>
 <landing-features></landing-features>
+<div class="subscriptions">
+    <h1>Акции, специальные предложения и события</h1>
+    <input type="text" class="email" [formControl]="email" placeholder="Введите Email...">
+    <button
+        mat-raised-button
+        type="button"
+        color="primary"
+        tabindex="-1"
+        (click)="onSend()">
+        Подписаться
+    </button>
+</div>
 <landing-footer></landing-footer>

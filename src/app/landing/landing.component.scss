@@ -1,6 +1,34 @@
+@import "../../theme";
+
+$primary: map-get($theme, primary);
+
 :host {
     display: block;
     flex: 1;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
+}
+
+.subscriptions {
+    height: 90px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: mat-color($primary, darker);
+
+    h1 {
+        color: mat-color($primary, 50);
+    }
+
+    .email {
+        width: 340px;
+        height: 32px;
+        border-radius: 5px;
+        border: none;
+        outline: none;
+        font-family: Roboto;
+        font-size: 14px;
+        padding-left: 8px;
+    }
 }

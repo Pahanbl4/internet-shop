@@ -1,6 +1,6 @@
 <button mat-button [matMenuTriggerFor]="menu">
     <img *ngIf="model.icon" src="assets/svg/{{model.icon}}.svg">
-    <h2 class="description ellipsis"> {{model.name}} </h2>
+    <div class="description"> {{model.name}} </div>
 </button>
 
 <mat-menu #menu="matMenu" classList="page-header-menu">
