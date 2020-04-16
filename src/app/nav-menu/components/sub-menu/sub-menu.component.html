@@ -1,0 +1,26 @@
+<mat-menu #matMenuComp #childMenu="matMenu" [overlapTrigger]="false" [hasBackdrop]="false">
+    <span (mouseenter)="mouseenter2.emit()" (mouseleave)="mouseleave2.emit();resetFocus(matMenuComp);">
+        <span *ngFor="let model of items">
+            <!-- Handle branch node menu items -->
+            <button mat-menu-item
+                class="element"
+                routerLink="model.link"
+                color="primary"
+                [matMenuTriggerFor]="technics">
+                <img *ngIf="model.icon" src="assets/svg/{{model.icon}}.svg">
+                <span class="description">{{model.label}}</span>
+            </button>
+        </span>
+    </span>
+    <mat-menu #technics="matMenu">
+        <button mat-menu-item>Insects</button>
+        <button mat-menu-item>Molluscs</button>
+        <button mat-menu-item>Crustaceans</button>
+        <button mat-menu-item>Corals</button>
+        <button mat-menu-item>Arachnids</button>
+        <button mat-menu-item>Velvet worms</button>
+        <button mat-menu-item>Horseshoe crabs</button>
+      </mat-menu>
+</mat-menu>
+
+

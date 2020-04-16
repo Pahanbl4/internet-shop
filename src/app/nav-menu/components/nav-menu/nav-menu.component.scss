@@ -1,0 +1,8 @@
+@import "../../../../theme";
+
+$primary: map-get($theme, primary);
+
+.mat-button {
+    background-color: mat-color($primary, darker);
+    color: mat-color($primary, 50);
+}

@@ -1,0 +1,13 @@
+<div class="basic-container">
+    <span *ngFor="let item of navItems.structure">
+        <button #button mat-button color="default" [matMenuTriggerFor]="menu.childMenu"
+            #levelOneTrigger="matMenuTrigger" (mouseenter)="buttonEnter(levelOneTrigger)"
+            (mouseleave)="buttonLeave(levelOneTrigger, button)" class="WHYYYYY">
+            <mat-icon>menu</mat-icon>
+            {{ item.label }}
+        </button>
+        <sub-menu #menu (mouseenter2)="menuenter()" (mouseleave2)="menuLeave(levelOneTrigger, button)"
+            [items]="item.childs" (click)="menuItemClicked()">
+        </sub-menu>
+    </span>
+</div>

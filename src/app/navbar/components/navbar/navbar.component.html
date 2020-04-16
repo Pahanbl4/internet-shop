@@ -1,8 +1,5 @@
 <div class="teams-title">
-    <button mat-button>
-        <mat-icon>menu</mat-icon>
-        Каталог
-    </button>
+    <nav-menu [navItems]="menuObj" (menuItem)="openTab($event)"></nav-menu>
     <button mat-button>
         Бренды
     </button>
