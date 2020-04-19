@@ -1,9 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatCardModule, MatIconModule, MatButtonModule } from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { NgModule } from '@angular/core';
 
-import { ProductCardComponent } from './product-card.component';
 import { InterestDiscountModule } from '../interest-discount/interest-discount.module';
+import { ProductCardComponent } from './product-card.component';
 
 @NgModule({
     declarations: [
@@ -11,10 +13,10 @@ import { InterestDiscountModule } from '../interest-discount/interest-discount.m
     ],
     imports: [
         CommonModule,
-        MatCardModule,
-        MatIconModule,
+        InterestDiscountModule,
         MatButtonModule,
-        InterestDiscountModule
+        MatCardModule,
+        MatIconModule
     ],
     providers: [],
     exports: [ProductCardComponent]

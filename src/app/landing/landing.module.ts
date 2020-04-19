@@ -1,7 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 import { MatCarouselModule } from '@ngmodule/material-carousel';
-import { MatIconModule, MatMenuModule, MatButtonModule, MatSidenavModule, MatRadioModule, MatFormFieldModule, MatInputModule, MatDividerModule } from '@angular/material';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { NgModule } from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { RouterModule } from '@angular/router';
@@ -11,9 +18,9 @@ import { LandingFeaturesComponent } from './shared/components/landing-features/l
 import { LandingFooterComponent } from './shared/components/landing-footer/landing-footer.component';
 import { LandingHeroComponent } from './shared/components/landing-hero/landing-hero.component';
 import { LandingRoutingModule } from './landing-routing.module';
+import { NavbarModule } from '../navbar/navbar.module';
 import { ProductCardModule } from '../product-card/product-card.module';
 import { TechnologySectionComponent } from './shared/components/technology-section/technology-section.component';
-import { NavbarModule } from '../navbar/navbar.module';
 
 @NgModule({
     declarations: [
@@ -24,23 +31,23 @@ import { NavbarModule } from '../navbar/navbar.module';
         TechnologySectionComponent
     ],
     imports: [
-        MatCarouselModule.forRoot(),
         CommonModule,
         FormsModule,
-        MatIconModule,
-        MatMenuModule,
-        MatButtonModule,
-        MatSidenavModule,
-        RouterModule,
-        OverlayModule,
         LandingRoutingModule,
-        ReactiveFormsModule,
-        ProductCardModule,
-        MatRadioModule,
+        MatButtonModule,
+        MatCarouselModule.forRoot(),
+        MatDividerModule,
         MatFormFieldModule,
+        MatIconModule,
         MatInputModule,
+        MatMenuModule,
+        MatRadioModule,
+        MatSidenavModule,
         NavbarModule,
-        MatDividerModule
+        OverlayModule,
+        ProductCardModule,
+        ReactiveFormsModule,
+        RouterModule
     ],
     providers: []
 })

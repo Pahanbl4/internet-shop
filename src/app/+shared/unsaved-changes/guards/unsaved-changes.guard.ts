@@ -1,6 +1,6 @@
 import { CanDeactivate } from '@angular/router';
 import { HostListener, Injectable } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable, of } from 'rxjs';
 
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';

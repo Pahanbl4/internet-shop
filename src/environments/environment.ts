@@ -1,9 +1,15 @@
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-    production: false
+    production: false,
+    plugins: [
+        NgxsLoggerPluginModule.forRoot({ logger: console, collapsed: false }),
+        NgxsReduxDevtoolsPluginModule.forRoot(),
+    ]
 };
 
 /*

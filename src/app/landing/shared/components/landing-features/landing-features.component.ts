@@ -48,9 +48,6 @@ export class LandingFeaturesComponent implements OnInit {
             ...this.models,
             ...this.models,
             ...this.models,
-            ...this.models,
-            ...this.models,
-            ...this.models,
             ...this.models
         ]
     }

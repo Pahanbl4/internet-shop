@@ -1,8 +1,11 @@
 import { CommonModule } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 import { NgModule } from '@angular/core';
+
 import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
 import { SubMenuComponent } from './components/sub-menu/sub-menu.component';
-import { MatMenuModule, MatButtonModule, MatIconModule } from '@angular/material';
 
 const components = [
     NavMenuComponent,
@@ -11,10 +14,10 @@ const components = [
 @NgModule({
     declarations: [...components],
     imports: [
-        MatMenuModule,
+        CommonModule,
         MatButtonModule,
         MatIconModule,
-        CommonModule
+        MatMenuModule
     ],
     exports: [...components]
 })

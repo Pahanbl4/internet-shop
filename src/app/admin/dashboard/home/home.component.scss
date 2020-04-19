@@ -1,0 +1,7 @@
+@import "../../../../theme";
+
+$primary: map-get($theme, primary);
+
+.location-icon {
+  color: mat-color($primary, 50);
+}

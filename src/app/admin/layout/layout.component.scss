@@ -1,0 +1,25 @@
+@import "../../../theme";
+
+$primary: map-get($theme, primary);
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .sidenav-container {
+    flex: 1;
+    background: mat-color($primary, darker);
+    .sidenav {
+      padding: 12px;
+      width: 250px;
+      background: mat-color($primary, 50);
+    }
+    .main-container {
+      padding: 16px;
+    }
+  }
+}

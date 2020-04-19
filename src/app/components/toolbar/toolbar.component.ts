@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { Navigate } from '@ngxs/router-plugin';
 
 @Component({
   selector: 'toolbar',
@@ -30,10 +32,14 @@ export class ToolbarComponent implements OnInit {
 
   description: string;
 
-  constructor() { }
+  constructor(public store: Store) { }
 
   ngOnInit(): void {
     this.name = 'E-commerce';
     this.description = 'Trusted Everywhere'
+  }
+
+  onLogin(): void {
+    this.store.dispatch(new Navigate(['login']))
   }
 }
