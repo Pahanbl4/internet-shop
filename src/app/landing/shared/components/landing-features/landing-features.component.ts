@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Section } from '../../models/section.model';
+import { OrderModel } from '@shared/models/order.mdel';
 
 @Component({
     selector: 'landing-features',
@@ -10,6 +11,8 @@ import { Section } from '../../models/section.model';
 export class LandingFeaturesComponent implements OnInit {
 
     models: Section[];
+
+    orders: OrderModel[];
 
     checkOffer = 'Спецпредложения';
 
@@ -25,6 +28,31 @@ export class LandingFeaturesComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.orders = [
+            new OrderModel({
+                description: 'Исполнение: настольное, Количество полок: 2, Температурный режим, C: +6...+12',
+                inStock: true,
+                photo: 'https://asgr.pro/1cimport/141404-100-001.jpeg',
+                name: 'Льдогенератор ICE TECH SK25A',
+                price: 2100,
+                interestDiscount: 90
+            }),
+            new OrderModel({
+                description: 'Кофемолка Expobar 600 Manual используется для измельчения кофейных зерен и получения молотой массы для заваривания кофе в турке',
+                inStock: true,
+                photo: 'https://asgr.pro/1cimport/010103-022-001.jpeg',
+                name: 'Кофемолка Expobar 600 Manual',
+                price: 3100,
+                interestDiscount: 80
+            })
+        ];
+        this.orders = [
+            ...this.orders,
+            ...this.orders,
+            ...this.orders,
+            ...this.orders,
+            ...this.orders
+        ];
         this.models = [
             new Section({
                 icon: 'kettle',

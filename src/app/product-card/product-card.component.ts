@@ -1,4 +1,8 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { OrderModel } from '@shared/models/order.mdel';
+import { Store } from '@ngxs/store';
+
+import { AddToBasket } from '../basket-popup/store/basket-popup.actions';
 
 @Component({
     selector: 'product-card',
@@ -7,10 +11,11 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductCardComponent {
+    @Input() order: OrderModel;
 
-    instock = true;
+    constructor(public store: Store) { }
 
     onAddItem(): void {
-        console.log('added item to Basket')
+        this.store.dispatch(new AddToBasket(this.order));
     }
 }

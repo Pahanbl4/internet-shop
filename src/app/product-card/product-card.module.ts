@@ -4,6 +4,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { NgModule } from '@angular/core';
 
+import { PipesModule } from '@shared/pipes/pipes.module';
+
 import { InterestDiscountModule } from '../interest-discount/interest-discount.module';
 import { ProductCardComponent } from './product-card.component';
 
@@ -16,7 +18,8 @@ import { ProductCardComponent } from './product-card.component';
         InterestDiscountModule,
         MatButtonModule,
         MatCardModule,
-        MatIconModule
+        MatIconModule,
+        PipesModule
     ],
     providers: [],
     exports: [ProductCardComponent]

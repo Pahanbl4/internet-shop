@@ -24,9 +24,9 @@
         <button mat-button [matMenuTriggerFor]="menu">
             <mat-icon>call</mat-icon>
         </button>
-        <button mat-button>
+        <button mat-button (click)="onOpenBasket()">
             <mat-icon>shopping_cart</mat-icon>
-            {{'32,23 руб'}}
+            {{(cost$ | async) || 0}} руб.
         </button>
         <button mat-button (click)="onLogin()">
             Login

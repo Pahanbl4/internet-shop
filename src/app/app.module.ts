@@ -8,10 +8,10 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { environment } from '@environments/environment';
 
 import { AppComponent } from './app.component';
+import { AuthGuard } from './guards/auth.guard';
 import { AuthModule } from './auth/auth.module';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { appRouterProviders } from './app-routing.module';
-import { AuthGuard } from './guards/auth.guard';
 
 @NgModule({
     declarations: [
@@ -23,11 +23,11 @@ import { AuthGuard } from './guards/auth.guard';
         environment.plugins,
         appRouterProviders,
         AuthModule,
+        BrowserAnimationsModule,
         BrowserModule,
         CommonModule,
-        BrowserAnimationsModule,
-        ToolbarModule,
-        OverlayModule
+        OverlayModule,
+        ToolbarModule
     ],
     providers: [AuthGuard],
     bootstrap: [AppComponent]

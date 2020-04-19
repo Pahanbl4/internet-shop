@@ -1,6 +1,10 @@
 import { ChangeDetectionStrategy, Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Store, Select } from '@ngxs/store';
 import { Navigate } from '@ngxs/router-plugin';
+import { BasketPopupComponent } from 'app/basket-popup/basket-popup.component';
+import { MatDialog } from '@angular/material/dialog';
+import { BasketState } from 'app/basket-popup/store/basket-popup.state';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'toolbar',
@@ -9,6 +13,9 @@ import { Navigate } from '@ngxs/router-plugin';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ToolbarComponent implements OnInit {
+
+  @Select(BasketState.cost) cost$: Observable<number>;
+
   @Input() searchDebounceTime = 300;
 
   @Input() showSearch = true;
@@ -32,7 +39,7 @@ export class ToolbarComponent implements OnInit {
 
   description: string;
 
-  constructor(public store: Store) { }
+  constructor(public store: Store,  private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.name = 'E-commerce';
@@ -41,5 +48,13 @@ export class ToolbarComponent implements OnInit {
 
   onLogin(): void {
     this.store.dispatch(new Navigate(['login']))
+  }
+
+  onOpenBasket(): void {
+    this.dialog
+      .open(BasketPopupComponent, {
+
+        panelClass: 'huge-dialog'
+      });
   }
 }

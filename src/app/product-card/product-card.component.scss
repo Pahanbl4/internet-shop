@@ -17,6 +17,10 @@ $warn: map-get($theme, warn);
       justify-content: space-between;
       padding-bottom: 10px;
     }
+
+    .mat-card-image {
+        max-height: 300px;
+    }
 }
 
 .mat-card-actions {

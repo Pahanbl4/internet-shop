@@ -14,7 +14,9 @@
         </mat-radio-group>
     </div>
     <div class="full-width">
-        <product-card *ngFor="let model of models"></product-card>
+        <product-card *ngFor="let order of orders"
+            [order]="order">
+        </product-card>
     </div>
     <div class="footer">
         <button

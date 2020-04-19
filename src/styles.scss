@@ -24,6 +24,18 @@ body {
     text-transform: initial;
 }
 
+.huge-dialog {
+    max-height: 100%;
+    width: 90%;
+    height: 90%;
+
+    .mat-dialog-container {
+        max-width: initial;
+        overflow: hidden;
+        padding: 0;
+    }
+}
+
 .mt5 {
     margin-top: 5px;
 }

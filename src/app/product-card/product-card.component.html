@@ -1,21 +1,21 @@
 <mat-card class="example-card">
   <div class="header">
     <div class="instock-wrapper">
-      <div class="instock">{{ instock ? 'В наличии' : 'Нет в наличии' }}</div>
+      <div class="instock">{{ order.inStock ? 'В наличии' : 'Нет в наличии' }}</div>
     </div>
-    <interest-discount [count]="90"></interest-discount>
+    <interest-discount [count]="order.interestDiscount"></interest-discount>
   </div>
-  <img mat-card-image src="https://asgr.pro/1cimport/141404-100-001.jpeg" alt="Photo of a Shiba Inu">
+  <img mat-card-image [src]="order.photo" alt="Photo of a Shiba Inu">
   <mat-card-content>
-    <h3>Льдогенератор ICE TECH SK25A</h3>
+    <h3>{{order.name}}</h3>
     <p>
-      Исполнение: настольное, Количество полок: 2, Температурный режим, C: +6...+12
+      {{order.description}}
     </p>
   </mat-card-content>
   <mat-card-actions>
     <div class="price">
-      <p class="new-price">100руб.</p>
-      <p class="old-price">2100руб.</p>
+      <p class="new-price">{{order.price | precentageDeduction: order.interestDiscount}}руб.</p>
+      <p class="old-price">{{order.price}}руб.</p>
     </div>
     <button
       mat-button

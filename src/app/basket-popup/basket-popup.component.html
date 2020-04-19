@@ -1,0 +1,30 @@
+<mat-form-field>
+    <mat-icon matPrefix aria-label="Search">search</mat-icon>
+    <input matInput
+        placeholder="Search"
+        tabindex="-1"
+        maxlength="100"
+        [formControl]="searchFormControl"
+        (focus)="onSearchFocus()"
+        (blur)="onSearchBlur()" />
+</mat-form-field>
+
+<h1>ORDERS</h1>
+
+<mat-list class="tile-items" *ngIf="(orders$ | async) as orders">
+    <mat-list-item *ngFor="let order of orders">
+      <h3 matLine> {{order.name}} </h3>
+      <p matLine>
+        <span> {{order.price}} </span>
+        <span class="demo-2"> -- {{order.interestDiscount}} </span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+<div class="dialog-actions">
+    <button mat-button
+        (click)="onClose()"
+        tabindex="-1"
+        color="accent">
+        CANCEL
+    </button>
+</div>
