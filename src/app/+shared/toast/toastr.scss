@@ -1,0 +1,231 @@
+/* position */
+
+.toast-center-center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.toast-top-center {
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-bottom-center {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-top-full-width {
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-bottom-full-width {
+    bottom: 0;
+    right: 0;
+    width: 100%;
+}
+
+.toast-top-left {
+    top: 0;
+    left: 0;
+}
+
+.toast-top-right {
+    top: 0;
+    right: 0;
+    align-items: flex-end;
+}
+
+.toast-bottom-right {
+    right: 0;
+    bottom: 0;
+    align-items: flex-end;
+}
+
+.toast-bottom-left {
+    bottom: 0;
+    left: 0;
+}
+
+/* toast styles */
+
+.toast-title {
+    font-weight: 500;
+}
+
+.toast-message {
+    line-height: 20px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, .7);
+    word-wrap: break-word;
+}
+
+.toast-message a,
+.toast-message label {
+    color: #fff;
+}
+
+.toast-message a:hover {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.toast-close-button {
+    position: relative;
+    right: -.3em;
+    top: -.3em;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 0 1px 0 #fff;
+}
+
+.toast-close-button:hover,
+.toast-close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .4;
+}
+
+/* Additional properties for button version
+iOS requires the button element instead of an anchor tag.
+If you want the anchor version, it requires `href="#"`. */
+
+button.toast-close-button {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+}
+
+.toast-container {
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    position: fixed;
+    padding: 20px;
+    width: 100%;
+    z-index: 999999;
+}
+
+.toast-container:empty {
+    display: none;
+}
+
+.toast-container * {
+    box-sizing: border-box;
+}
+
+.toast-container .ngx-toastr {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 14px 16px;
+    max-width: 344px;
+    width: 100%;
+    min-height: 48px;
+    border-radius: 3px;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    box-shadow: 0 0 12px #999;
+    color: #fff;
+}
+
+.toast-container .ngx-toastr:hover {
+    box-shadow: 0 0 12px #000;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.toast-container.toast-top-center .ngx-toastr,
+.toast-container.toast-bottom-center .ngx-toastr {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.toast-container.toast-top-full-width .ngx-toastr,
+.toast-container.toast-bottom-full-width .ngx-toastr {
+    width: 96%;
+    margin: 0 auto;
+}
+
+.ngx-toastr {
+    background-color: #323232;
+    pointer-events: auto;
+}
+
+.toast-success {
+    background-image: none;
+
+    .toast-title {
+        color: #3fcf00;
+    }
+}
+
+.toast-error {
+    background-image: none;
+
+    .toast-title {
+        color: #bd362f;
+    }
+}
+
+.toast-info {
+    background-color: #2f96b4;
+}
+
+.toast-warning {
+    background-color: #f89406;
+}
+
+.toast-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: #000;
+    opacity: .4;
+}
+
+/* Responsive Design */
+
+@media all and (max-width: 240px) {
+    .toast-container .ngx-toastr.div {
+        padding: 8px 8px 8px 50px;
+        width: 11em;
+    }
+
+    .toast-container .toast-close-button {
+        right: -.2em;
+        top: -.2em;
+    }
+}
+
+@media all and (min-width: 241px) and (max-width: 480px) {
+    .toast-container .ngx-toastr.div {
+        padding: 8px 8px 8px 50px;
+        width: 18em;
+    }
+
+    .toast-container .toast-close-button {
+        right: -.2em;
+        top: -.2em;
+    }
+}
+
+@media all and (min-width: 481px) and (max-width: 768px) {
+    .toast-container .ngx-toastr.div {
+        padding: 15px 15px 15px 50px;
+        width: 25em;
+    }
+}

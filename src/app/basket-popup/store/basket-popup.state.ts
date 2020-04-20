@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Selector, State, Action, StateContext } from '@ngxs/store';
-import { append, patch, removeItem } from '@ngxs/store/operators';
+import { append, patch, removeItem, updateItem } from '@ngxs/store/operators';
 
 import { BasketStateModel } from './basket-popup.model';
 import { OrderModel } from '@shared/models/order.mdel';
-import { AddToBasket, RemoveFromBasket } from './basket-popup.actions';
+import { AddToBasket, RemoveFromBasket, UpdateCount } from './basket-popup.actions';
 
 @State<BasketStateModel>({
     name: 'basket',
@@ -23,7 +23,7 @@ export class BasketState {
     @Selector()
     static cost({ orders }: BasketStateModel): number {
         const reducer = (accumulator, currentValue) => accumulator + currentValue;
-        return orders.map(x => x.price).reduce(reducer) || 0;
+        return orders.map(x => x.price * x.count).reduce(reducer) || 0;
     }
 
     @Action(AddToBasket)
@@ -33,6 +33,24 @@ export class BasketState {
     ): void {
         setState(patch({
             orders: append([payload])
+        }))
+    }
+
+    @Action(UpdateCount)
+    onUpdateCount(
+        { setState }: StateContext<BasketStateModel>,
+        { payload, number }: UpdateCount
+    ): void {
+        const newCount = payload.count + number;
+        if(newCount <= 0) {
+            return;
+        }
+
+        setState(patch({
+            orders: updateItem<OrderModel>(
+                x => x.id === payload.id,
+                patch({ count: newCount })
+            )
         }))
     }
 

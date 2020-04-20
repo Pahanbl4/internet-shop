@@ -17,3 +17,9 @@ export class AddToBasket {
 
     constructor(public payload: OrderModel) { }
 }
+
+export class UpdateCount {
+    static readonly type = '[Basket] update count';
+
+    constructor(public payload: OrderModel, public number: number) { }
+}

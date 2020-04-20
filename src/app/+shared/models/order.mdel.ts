@@ -6,6 +6,7 @@ export class OrderModel extends AbstractIdDto<number> {
     public photo: string;
     public price: number;
     public interestDiscount: number;
+    public count: number;
     public inStock: boolean;
 
     public constructor(
