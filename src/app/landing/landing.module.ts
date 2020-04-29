@@ -18,7 +18,6 @@ import { LandingFeaturesComponent } from './shared/components/landing-features/l
 import { LandingFooterComponent } from './shared/components/landing-footer/landing-footer.component';
 import { LandingHeroComponent } from './shared/components/landing-hero/landing-hero.component';
 import { LandingRoutingModule } from './landing-routing.module';
-import { NavbarModule } from '../navbar/navbar.module';
 import { ProductCardModule } from '../product-card/product-card.module';
 import { TechnologySectionComponent } from './shared/components/technology-section/technology-section.component';
 
@@ -43,7 +42,6 @@ import { TechnologySectionComponent } from './shared/components/technology-secti
         MatMenuModule,
         MatRadioModule,
         MatSidenavModule,
-        NavbarModule,
         OverlayModule,
         ProductCardModule,
         ReactiveFormsModule,

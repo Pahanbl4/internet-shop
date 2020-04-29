@@ -9,15 +9,35 @@
         (blur)="onSearchBlur()" />
 </mat-form-field>
 
-<h1>ORDERS</h1>
+<h1>Товары</h1>
 
 <mat-list class="tile-items" *ngIf="(orders$ | async) as orders">
+    <mat-list-item class="header">
+      <div matRow class="name"> Название </div>
+      <div matRow class="price"> Цена </div>
+      <div matRow> Скидка </div>
+      <div matRow class="counter"> Количество </div>
+      <div matRow class="empty"> </div>
+    </mat-list-item>
     <mat-list-item *ngFor="let order of orders">
-      <h3 matLine> {{order.name}} </h3>
-      <p matLine>
-        <span> {{order.price}} </span>
-        <span class="demo-2"> -- {{order.interestDiscount}} </span>
-      </p>
+      <div matRow class="name"> {{order.name}} </div>
+      <div matRow class="price"> {{order.price * order.count }} руб.</div>
+      <div matRow> {{order.interestDiscount}}% </div>
+      <div class="counter">
+        <button mat-button class="add" (click)="onUpdateCount(order, 1)">
+          <mat-icon>add</mat-icon>
+        </button>
+        <span class="count">{{order.count}}</span>
+        <button mat-button class="remove" (click)="onUpdateCount(order, -1)">
+          <mat-icon>remove</mat-icon>
+        </button>
+      </div>
+      <button mat-raised-button
+        (click)="onRemove(order.id)"
+        tabindex="-1"
+        color="accent">
+        Удалить
+    </button>
     </mat-list-item>
   </mat-list>
 <div class="dialog-actions">
@@ -25,6 +45,13 @@
         (click)="onClose()"
         tabindex="-1"
         color="accent">
-        CANCEL
+        Закрыть
+    </button>
+
+      <button mat-raised-button
+        (click)="onSave()"
+        tabindex="-1"
+        color="accent">
+        Оформить Заказ
     </button>
 </div>

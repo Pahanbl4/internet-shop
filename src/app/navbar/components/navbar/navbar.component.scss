@@ -4,13 +4,7 @@ $primary: map-get($theme, primary);
 
 .teams-title {
     display: flex;
-    align-items: center;
     background-color: mat-color($primary, darker);
     color: mat-color($primary, 50);
-    height: 40px;
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
     z-index: 101;
 }

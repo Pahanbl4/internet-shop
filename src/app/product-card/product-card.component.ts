@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { OrderModel } from '@shared/models/order.mdel';
+import { OrderModel } from '@shared/models/order.model';
 import { Store } from '@ngxs/store';
 
 import { AddToBasket } from '../basket-popup/store/basket-popup.actions';

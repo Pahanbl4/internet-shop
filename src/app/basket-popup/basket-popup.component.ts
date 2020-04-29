@@ -7,7 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Select, Store } from '@ngxs/store';
 import { BasketState } from './store/basket-popup.state';
 import { Observable } from 'rxjs';
-import { OrderModel } from '@shared/models/order.mdel';
+import { OrderModel } from '@shared/models/order.model';
 import { RemoveFromBasket, UpdateCount } from './store/basket-popup.actions';
 import { SetSuccess } from '@shared/toast';
 

@@ -8,6 +8,8 @@ export class OrderModel extends AbstractIdDto<number> {
     public interestDiscount: number;
     public count: number;
     public inStock: boolean;
+    public producer: string;
+    public countryOrigin: string;
 
     public constructor(
         fields?: Partial<OrderModel>) {

@@ -1,0 +1,43 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" opened>
+    <h1 class="title">Фильтр</h1>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Страна
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-checkbox class="country" *ngFor="let country of countrys">{{country.name}}</mat-checkbox>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Производитель
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <mat-checkbox class="country" *ngFor="let producer of producers">{{producer.name}}</mat-checkbox>
+    </mat-expansion-panel>
+    <mat-expansion-panel [expanded]="true">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Цена
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+    </mat-expansion-panel>
+    <button mat-raised-button
+      class="found"
+      (click)="onSearch()"
+      tabindex="-1"
+      color="accent">
+      Искать
+    </button>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="content">
+        <product-card *ngFor="let order of catalog$ | async"
+          [order]="order">
+        </product-card>
+      </div>
+    </mat-drawer-content>
+</mat-drawer-container>

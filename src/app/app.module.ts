@@ -12,6 +12,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { AuthModule } from './auth/auth.module';
 import { ToolbarModule } from './components/toolbar/toolbar.module';
 import { appRouterProviders } from './app-routing.module';
+import { NavbarModule } from './navbar/navbar.module';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { appRouterProviders } from './app-routing.module';
         BrowserAnimationsModule,
         BrowserModule,
         CommonModule,
+        NavbarModule,
         OverlayModule,
         ToolbarModule
     ],

@@ -3,7 +3,7 @@ import { Selector, State, Action, StateContext } from '@ngxs/store';
 import { append, patch, removeItem, updateItem } from '@ngxs/store/operators';
 
 import { BasketStateModel } from './basket-popup.model';
-import { OrderModel } from '@shared/models/order.mdel';
+import { OrderModel } from '@shared/models/order.model';
 import { AddToBasket, RemoveFromBasket, UpdateCount } from './basket-popup.actions';
 
 @State<BasketStateModel>({

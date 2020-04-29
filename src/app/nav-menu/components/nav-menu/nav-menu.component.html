@@ -2,7 +2,7 @@
     <span *ngFor="let item of navItems.structure">
         <button #button mat-button color="default" [matMenuTriggerFor]="menu.childMenu"
             #levelOneTrigger="matMenuTrigger" (mouseenter)="buttonEnter(levelOneTrigger)"
-            (mouseleave)="buttonLeave(levelOneTrigger, button)" class="WHYYYYY">
+            (mouseleave)="buttonLeave(levelOneTrigger, button)" (click)="onOpen()" class="WHYYYYY">
             <mat-icon>menu</mat-icon>
             {{ item.label }}
         </button>

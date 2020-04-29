@@ -1,4 +1,6 @@
 import { ChangeDetectionStrategy, Component, Renderer2, Output, Input, EventEmitter } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { Navigate } from '@ngxs/router-plugin';
 
 @Component({
     selector: 'nav-menu',
@@ -19,7 +21,7 @@ export class NavMenuComponent {
   @Output()
   menuItem = new EventEmitter();
     
-    constructor(private ren: Renderer2) { }
+    constructor(private ren: Renderer2, private store: Store) { }
 
     menuItemClicked(child: {}) {
         this.menuItem.emit(child);
@@ -95,5 +97,9 @@ export class NavMenuComponent {
           }
         }, 80)
         console.log("menuLeave");
+      }
+
+      onOpen(): void {
+        this.store.dispatch(new Navigate(['catalog']))
       }
 }

@@ -1,6 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
 
-import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
     {
@@ -15,6 +14,10 @@ const routes: Routes = [
     {
         path: 'login',
         loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+    },
+    {
+        path: 'catalog',
+        loadChildren: () => import('./catalog/catalog.module').then(m => m.CatalogModule)
     },
     { path: '**', redirectTo: '' }
 ];

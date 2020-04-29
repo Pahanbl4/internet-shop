@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Section } from '../../models/section.model';
-import { OrderModel } from '@shared/models/order.mdel';
+import { OrderModel } from '@shared/models/order.model';
 
 @Component({
     selector: 'landing-features',
