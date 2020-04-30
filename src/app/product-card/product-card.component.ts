@@ -3,6 +3,7 @@ import { OrderModel } from '@shared/models/order.model';
 import { Store } from '@ngxs/store';
 
 import { AddToBasket } from '../basket-popup/store/basket-popup.actions';
+import { Navigate } from '@ngxs/router-plugin';
 
 @Component({
     selector: 'product-card',
@@ -17,5 +18,9 @@ export class ProductCardComponent {
 
     onAddItem(): void {
         this.store.dispatch(new AddToBasket(this.order));
+    }
+
+    onOpen(): void {
+        this.store.dispatch(new Navigate(['catalog', 'product', `${this.order.id}`]));
     }
 }

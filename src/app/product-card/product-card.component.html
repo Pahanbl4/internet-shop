@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card class="example-card" (click)="onOpen()">
   <div class="header">
     <div class="instock-wrapper">
       <div class="instock">{{ order.inStock ? 'В наличии' : 'Нет в наличии' }}</div>
@@ -21,7 +21,7 @@
       mat-button
       class="add-basket-button"
       type="button"
-      (click)="onAddItem()">
+      (click)="onAddItem();$event.stopPropagation()">
       <mat-icon>add_circle_outline</mat-icon>
     </button>
   </mat-card-actions>

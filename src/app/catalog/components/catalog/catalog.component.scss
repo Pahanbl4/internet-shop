@@ -1,7 +1,8 @@
 :host {
-    overflow: auto;
+    overflow: hidden;
 
     .mat-drawer-container {
+        height: 100%;
         ::ng-deep.mat-drawer-inner-container {
             display: flex;
             flex-direction: column;
@@ -16,10 +17,6 @@
                 flex-wrap: wrap;
             }
         }
-    }
-
-    .mat-drawer-content {
-        padding: 10px;
     }
     
     .title {

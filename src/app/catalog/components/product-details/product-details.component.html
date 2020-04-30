@@ -1,0 +1,40 @@
+<ng-container *ngIf="(product$ | async) as product">
+    <h1 class="title">{{product.name}}</h1>
+    <mat-divider></mat-divider>
+    <section class="container">
+        <img mat-card-image [src]="product.photo">
+        <div class="info">
+            <p>Нашли цену дешевле? Снизим цену!</p>
+            <div class="price">
+                <div class="old-price">
+                    <interest-discount [count]="product.interestDiscount"></interest-discount>
+                    <p>{{product.price}}руб.</p>
+                </div>
+                <p class="new-price">{{product.price | precentageDeduction: product.interestDiscount}}руб.</p>
+            </div>
+            <div class="phone">
+                <p>Консультация по телефону:</p>
+                <a mat-menu-item [href]="'tel: +375331234567'">
+                    <mat-icon mat-list-icon>phone</mat-icon>
+                    <span>+375331234567</span>
+                </a>
+            </div>
+            <button
+                mat-raised-button
+                class="add-basket-button"
+                type="button"
+                color="accent"
+                (click)="onAddItem(product)">
+                <mat-icon>add_circle_outline</mat-icon>
+                Добавить в корзину
+          </button>
+        </div>
+    </section>
+    <section class="decription">
+        <mat-tab-group>
+            <mat-tab label="Описание"> {{product.description}} </mat-tab>
+            <mat-tab label="Производитель"> Content 2 </mat-tab>
+            <mat-tab label="Технические характеристики:"> Content 3 </mat-tab>
+          </mat-tab-group>
+    </section>
+</ng-container>

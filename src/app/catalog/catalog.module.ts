@@ -11,9 +11,18 @@ import { Ng5SliderModule } from 'ng5-slider';
 import { NgxsModule } from '@ngxs/store';
 import { CatalogState } from './store/catalog.state';
 import { ProductCardModule } from 'app/product-card/product-card.module';
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CatalogResolver } from './resolvers/catalog.resolver';
+import { ProductApiService } from './services/product-api.service';
+import { MatDividerModule } from '@angular/material/divider';
+import { PipesModule } from '@shared/pipes/pipes.module';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import {MatTabsModule} from '@angular/material/tabs';
+import { InterestDiscountModule } from 'app/interest-discount/interest-discount.module';
 
 @NgModule({
-    declarations: [CatalogComponent],
+    declarations: [CatalogComponent, ProductDetailsComponent],
     imports: [
         CommonModule,
         FormsModule,
@@ -21,13 +30,20 @@ import { ProductCardModule } from 'app/product-card/product-card.module';
         CatalogRoutingModule,
         MatExpansionModule,
         MatButtonModule,
+        MatDividerModule,
         MatCheckboxModule,
+        MatTabsModule,
+        InterestDiscountModule,
+        PipesModule,
+        MatMenuModule,
+        MatIconModule,
         Ng5SliderModule,
         MatSidenavModule,
         ProductCardModule,
         NgxsModule.forFeature([
             CatalogState
         ]),
-    ]
+    ],
+    providers: [CatalogResolver, ProductApiService]
 })
 export class CatalogModule { }
