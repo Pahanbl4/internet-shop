@@ -7,9 +7,6 @@ import { OrderModel } from '@shared/models/order.model';
 import { CatalogStateModel } from './catalog.model';
 import { LoadCatalog, LoadProduct } from './catalog.actions';
 import { ProductModel } from '@shared/models/product.model';
-import { ProductApiService } from '../services/product-api.service';
-import { Observable } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
 
 const catalog = [
     new OrderModel({
@@ -56,7 +53,7 @@ const catalog = [
 export class CatalogState {
 
     constructor(
-        private apiService: ProductApiService
+    //    private apiService: ProductApiService
     ) {}
 
     @Selector()

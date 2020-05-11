@@ -1,6 +1,6 @@
 <mat-toolbar>
     <div class="logo" onclick="window.location.href='#'">
-        <mat-icon>shopping_cart</mat-icon>
+        <img class="icon" src="assets/svg/bucket.svg">
         <div class="label">
             <p class="title"> {{ name }} </p>
             <p class="description"> {{ description }} </p>
@@ -29,7 +29,7 @@
             {{(cost$ | async) || 0}} руб.
         </button>
         <button mat-button (click)="onLogin()">
-            Login
+            Войти
         </button>
     </div>
 </mat-toolbar>
