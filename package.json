@@ -31,7 +31,7 @@
         "@ngxs/store": "3.6.2",
         "chart.js": "^2.9.3",
         "core-js": "3.6.4",
-        "moment": "2.24.0",
+        "moment": "2.29.2",
         "ng2-charts": "^2.3.0",
         "ng5-slider": "^1.2.4",
         "ngx-ellipsis": "^2.2.1",
